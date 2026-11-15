@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zafariddin Toshmurodov · FFc Trade</title>
+<meta name="description" content="Zafariddin Toshmurodov: forex, aksiya va kripto bozorlarida 4 yillik tajriba. Ma’lumot va tanishuv sahifasi.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a1228;--ink:#eaf0ff;--mut:#a9b6d6;--acc:#4f78f0;--line:#233157;--d:2.7s}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+.wrap{max-width:1136px;margin:0 auto;padding:0 24px;position:relative}
+/* intro */
+.intro{position:fixed;inset:0;z-index:99;background:var(--bg);display:flex;align-items:center;justify-content:center;gap:clamp(24px,7vw,80px);animation:out .7s ease-in 2.5s forwards}
+.il{display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0;animation:lp .8s cubic-bezier(.2,1.4,.4,1) both;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:.02em}
+.il:nth-child(1){animation-delay:.2s}.il:nth-child(2){animation-delay:.5s}.il:nth-child(3){animation-delay:.8s}
+.il span{text-align:center}.il small{display:block;font-weight:400;font-size:14px;color:var(--mut);margin-top:2px;letter-spacing:0}
+.il svg{animation:glow 1.6s ease-in-out 1.1s infinite}
+.bar{transform-box:fill-box;transform-origin:bottom;animation:grow .7s ease-out 1s both}
+.dr{stroke-dasharray:1;stroke-dashoffset:1;animation:dash .8s ease-out 1.3s forwards}
+.itag{position:absolute;bottom:12%;left:0;right:0;text-align:center;color:var(--mut);font-size:15px;letter-spacing:.12em;text-transform:uppercase;opacity:0;animation:up .6s ease-out 1.4s forwards}
+/* page */
+nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0;color:var(--mut)}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--ink)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#3fc878;margin-right:10px;animation:pulse 1.8s ease-out infinite}
+.hero{position:relative;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:24px 0 48px}
+.fl{position:absolute;opacity:.4;pointer-events:none}
+.fl svg{width:54px;height:54px}
+.f1{left:46%;top:2%;animation:drift 7s ease-in-out infinite}.f2{left:40%;bottom:4%;animation:drift 8s ease-in-out -3s infinite}.f3{right:2%;top:-2%;animation:drift 9s ease-in-out -5s infinite}
+.four{display:flex;align-items:center;gap:22px;margin-bottom:14px}
+.four b{font-family:'Space Grotesk',sans-serif;font-size:116px;line-height:.9;color:#6f95ff;text-shadow:1px 1px 0 #1b3a8a,2px 2px 0 #1b3a8a,3px 3px 0 #1b3a8a,4px 4px 0 #1b3a8a,5px 5px 0 #1b3a8a,6px 6px 0 #1b3a8a,7px 7px 0 #1b3a8a,8px 8px 0 #1b3a8a,9px 9px 0 #1b3a8a,10px 10px 0 #1b3a8a;animation:bob 4s ease-in-out infinite;min-width:70px}
+.four span{font-size:20px;line-height:1.35;color:var(--mut)}
+h1{margin:0 0 14px;font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,56px);line-height:1.04;letter-spacing:-.03em;background:linear-gradient(100deg,#eaf0ff 0%,#eaf0ff 40%,#8fb0ff 50%,#eaf0ff 60%,#eaf0ff 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:up .8s ease-out calc(var(--d) + .2s) both,shine 5s linear calc(var(--d) + 1.2s) infinite}
+.lead{margin:0 0 24px;font-size:19px;color:var(--mut);max-width:520px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:10px;position:relative;transition:transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn:not(.ghost){animation:ring 2.4s ease-out calc(var(--d) + 1.5s) infinite}
+.btn.ghost{background:transparent;border:1px solid #3a4c82}
+.btn:focus-visible{outline:3px solid #9fb6ff;outline-offset:3px}
+.scene{width:600px;height:380px;flex:none;perspective:1500px;perspective-origin:30% 40%}
+.tilt{width:100%;height:100%;transform-style:preserve-3d;transform:rotateY(calc(-20deg + var(--ry,0deg))) rotateX(calc(8deg + var(--rx,0deg)));transition:transform .25s ease-out}
+.stack{position:relative;width:100%;height:100%;transform-style:preserve-3d;animation:fl 6s ease-in-out infinite}
+.ph{position:absolute;left:0;top:6px;width:270px;height:350px;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#27489f,#12214d 60%,#0d1733);border:1px solid rgba(255,255,255,.25);box-shadow:0 40px 80px rgba(0,0,0,.55);animation:fi 1s ease-out calc(var(--d) + .6s) both}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
+.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,40,.92),rgba(10,18,40,0) 42%)}
+.ph div{position:absolute;left:18px;right:18px;bottom:16px;z-index:1}
+.ph strong{font-family:'Space Grotesk',sans-serif;font-size:19px;display:block}
+.ph small{font-size:14px;color:var(--mut)}
+.c{position:absolute;width:290px;height:124px;transform:translateZ(60px)}
+.c>div{position:relative;overflow:hidden;width:100%;height:100%;padding:18px 24px;border-radius:16px;background:rgba(14,24,52,.9);border:1px solid rgba(255,255,255,.2);box-shadow:0 30px 60px rgba(0,0,0,.5);animation:fi 1s ease-out both}
+.c>div:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.14),transparent);transform:skewX(-20deg);animation:sweep 5s ease-in-out infinite}
+.c h3{margin:0 0 4px;font-family:'Space Grotesk',sans-serif;font-size:26px;display:flex;align-items:center;gap:10px}
+.c h3 svg{width:28px;height:28px}
+.c p{margin:0;font-size:15px;color:var(--mut)}
+.trust{display:flex;gap:12px 36px;flex-wrap:wrap;padding:16px 0;border-top:1px solid var(--line);font-size:15px;color:#c9d4ee}
+.tkw{border-top:1px solid var(--line);background:#0d1733;overflow:hidden;padding:9px 0;color:#7f8db0;font-size:14px;letter-spacing:.04em}
+.tk{display:flex;white-space:nowrap;width:max-content;animation:tick 30s linear infinite}
+.disc{padding:20px 0 36px;font-size:13px;color:#7f8db0}
+.up{animation:up .8s ease-out both}
+@keyframes out{to{opacity:0;visibility:hidden;transform:scale(1.06)}}
+@keyframes lp{from{opacity:0;transform:translateY(40px) scale(.5) rotate(-12deg)}to{opacity:1;transform:none}}
+@keyframes glow{50%{filter:drop-shadow(0 0 16px rgba(111,149,255,.85))}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes dash{to{stroke-dashoffset:0}}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fi{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,200,120,.6)}100%{box-shadow:0 0 0 12px rgba(63,200,120,0)}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(79,120,240,.55)}70%,100%{box-shadow:0 0 0 16px rgba(79,120,240,0)}}
+@keyframes tick{to{transform:translateX(-50%)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes drift{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(14px,-18px) rotate(8deg)}}
+@keyframes shine{from{background-position:120% 0}to{background-position:-120% 0}}
+@keyframes sweep{0%,60%{left:-60%}100%{left:140%}}
+@media(max-width:960px){
+ .hero{flex-direction:column;align-items:flex-start}
+ .scene{width:100%;height:auto;perspective:none}
+ .tilt,.stack{animation:none;transform:none!important;display:flex;flex-direction:column;gap:14px;align-items:center}
+ .ph,.c{position:relative;left:auto!important;top:auto!important;transform:none}
+ .c{width:100%;max-width:420px;height:auto}
+ .four b{font-size:88px}.fl{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.intro{display:none}}
+</style>
+</head>
+<body>
+<div class="intro" aria-hidden="true">
+ <div class="il"><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><circle cx="36" cy="38" r="26" fill="rgba(111,149,255,.18)" stroke="#6f95ff" stroke-width="3"/><circle cx="60" cy="58" r="26" fill="rgba(63,200,120,.16)" stroke="#3fc878" stroke-width="3"/><text x="36" y="48" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="30" fill="#eaf0ff">$</text><text x="60" y="68" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="30" fill="#eaf0ff">€</text></svg><span>Forex<small>valyuta bozori</small></span></div>
+ <div class="il"><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><g fill="rgba(111,149,255,.35)" stroke="#6f95ff" stroke-width="3"><rect class="bar" x="12" y="58" width="16" height="26" rx="3"/><rect class="bar" style="animation-delay:.15s" x="38" y="44" width="16" height="40" rx="3"/><rect class="bar" style="animation-delay:.3s" x="64" y="28" width="16" height="56" rx="3"/></g><polyline pathLength="1" class="dr" points="10,44 34,28 52,36 84,10" stroke="#3fc878" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polyline class="dr" pathLength="1" points="68,10 84,10 84,26" stroke="#3fc878" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Aksiyalar<small>fond bozori</small></span></div>
+ <div class="il"><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><polygon points="48,6 84,27 84,69 48,90 12,69 12,27" fill="rgba(240,170,60,.16)" stroke="#f0aa3c" stroke-width="3" stroke-linejoin="round"/><text x="48" y="63" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="44" fill="#eaf0ff">₿</text></svg><span>Kriptovalyuta<small>kripto bozori</small></span></div>
+ <div class="itag">FFc Trade</div>
+</div>
+<div class="wrap">
+ <nav><span class="logo">FFc Trade</span><span><i class="dot"></i>Forex · Aksiyalar · Kripto</span></nav>
+ <main class="hero">
+  <div class="fl f1"><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><circle cx="36" cy="38" r="26" fill="rgba(111,149,255,.18)" stroke="#6f95ff" stroke-width="3"/><circle cx="60" cy="58" r="26" fill="rgba(63,200,120,.16)" stroke="#3fc878" stroke-width="3"/><text x="36" y="48" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="30" fill="#eaf0ff">$</text><text x="60" y="68" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="30" fill="#eaf0ff">€</text></svg></div><div class="fl f2"><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><polygon points="48,6 84,27 84,69 48,90 12,69 12,27" fill="rgba(240,170,60,.16)" stroke="#f0aa3c" stroke-width="3" stroke-linejoin="round"/><text x="48" y="63" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="44" fill="#eaf0ff">₿</text></svg></div><div class="fl f3"><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><g fill="rgba(111,149,255,.35)" stroke="#6f95ff" stroke-width="3"><rect class="bar" x="12" y="58" width="16" height="26" rx="3"/><rect class="bar" style="animation-delay:.15s" x="38" y="44" width="16" height="40" rx="3"/><rect class="bar" style="animation-delay:.3s" x="64" y="28" width="16" height="56" rx="3"/></g><polyline pathLength="1" class="dr" points="10,44 34,28 52,36 84,10" stroke="#3fc878" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polyline class="dr" pathLength="1" points="68,10 84,10 84,26" stroke="#3fc878" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div style="position:relative;z-index:1">
+   <div class="four up" style="animation-delay:calc(var(--d) + 0s)"><b>4</b><span>yillik tajriba<br>bozorlarda</span></div>
+   <h1>Zafariddin Toshmurodov</h1>
+   <p class="lead up" style="animation-delay:calc(var(--d) + .4s)">Treyder. Bu sahifa tanishuv va ma’lumot uchun, savdo terminali emas.</p>
+   <div class="btns up" style="animation-delay:calc(var(--d) + .6s)">
+    <a class="btn" id="yt" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube kanali</a>
+    <a class="btn ghost" id="tg" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+   </div>
+  </div>
+  <div class="scene" id="scene"><div class="tilt" id="tilt"><div class="stack">
+   <div class="ph"><img src="zafariddin.png" alt="Zafariddin Toshmurodov"><div><strong>Zafariddin Toshmurodov</strong><small>Treyder · 4 yil tajriba</small></div></div>
+   <div class="c" style="left:230px;top:0"><div style="animation-delay:calc(var(--d) + .9s)"><h3><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><circle cx="36" cy="38" r="26" fill="rgba(111,149,255,.18)" stroke="#6f95ff" stroke-width="3"/><circle cx="60" cy="58" r="26" fill="rgba(63,200,120,.16)" stroke="#3fc878" stroke-width="3"/><text x="36" y="48" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="30" fill="#eaf0ff">$</text><text x="60" y="68" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="30" fill="#eaf0ff">€</text></svg> Forex</h3><p>Valyuta bozori: tahlil va risk nazorati</p></div></div>
+   <div class="c" style="left:280px;top:128px"><div style="animation-delay:calc(var(--d) + 1.2s)"><h3><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><polygon points="48,6 84,27 84,69 48,90 12,69 12,27" fill="rgba(240,170,60,.16)" stroke="#f0aa3c" stroke-width="3" stroke-linejoin="round"/><text x="48" y="63" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="44" fill="#eaf0ff">₿</text></svg> Kripto</h3><p>Bitcoin, altcoinlar va bozor tuzilishi</p></div></div>
+   <div class="c" style="left:320px;top:256px"><div style="animation-delay:calc(var(--d) + 1.5s)"><h3><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><g fill="rgba(111,149,255,.35)" stroke="#6f95ff" stroke-width="3"><rect class="bar" x="12" y="58" width="16" height="26" rx="3"/><rect class="bar" style="animation-delay:.15s" x="38" y="44" width="16" height="40" rx="3"/><rect class="bar" style="animation-delay:.3s" x="64" y="28" width="16" height="56" rx="3"/></g><polyline pathLength="1" class="dr" points="10,44 34,28 52,36 84,10" stroke="#3fc878" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polyline class="dr" pathLength="1" points="68,10 84,10 84,26" stroke="#3fc878" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg> Aksiyalar</h3><p>Fond bozori: kompaniyalar va ularning bahosi</p></div></div>
+   <div class="c" style="left:320px;top:256px"><div style="animation-delay:calc(var(--d) + 1.5s)"><h3><svg viewBox="0 0 96 96" width="96" height="96" fill="none" aria-hidden="true"><g fill="rgba(111,149,255,.35)" stroke="#6f95ff" stroke-width="3"><rect class="bar" x="12" y="58" width="16" height="26" rx="3"/><rect class="bar" style="animation-delay:.15s" x="38" y="44" width="16" height="40" rx="3"/><rect class="bar" style="animation-delay:.3s" x="64" y="28" width="16" height="56" rx="3"/></g><polyline pathLength="1" class="dr" points="10,44 34,28 52,36 84,10" stroke="#3fc878" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polyline class="dr" pathLength="1" points="68,10 84,10 84,26" stroke="#3fc878" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg> Aksiyalar</h3><p>Kompaniyalar, fundamental va texnik yondashuv</p></div></div>
+  </div></div></div>
+ </main>
+ <div class="trust up" style="animation-delay:calc(var(--d) + 1.8s)"><span>✓ 4 yillik tajriba</span><span>✓ 3 bozor: Forex, Aksiyalar, Kripto</span><span>✓ Risk haqida ochiq ma’lumot</span></div>
+</div>
+<div class="tkw" aria-hidden="true"><div class="tk"><span>EUR/USD · GBP/USD · USD/JPY · XAU/USD · BTC · ETH · SOL · AAPL · TSLA · NVDA · MSFT · EUR/USD · GBP/USD · USD/JPY · XAU/USD · BTC · ETH · SOL · AAPL · TSLA · NVDA · MSFT · </span><span>EUR/USD · GBP/USD · USD/JPY · XAU/USD · BTC · ETH · SOL · AAPL · TSLA · NVDA · MSFT · EUR/USD · GBP/USD · USD/JPY · XAU/USD · BTC · ETH · SOL · AAPL · TSLA · NVDA · MSFT · </span></div></div>
+<div class="wrap"><p class="disc">Bu sahifadagi ma’lumotlar o‘quv va tanishuv maqsadida berilgan va moliyaviy maslahat emas. Savdo yo‘qotish xavfi bilan bog‘liq. © FFc Trade</p></div>
+<script>
+(function(){
+ var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+ var n=document.querySelector('.four b');
+ if(n&&!rm){n.textContent='0';setTimeout(function(){var v=0;var t=setInterval(function(){v++;n.textContent=v;if(v>=4)clearInterval(t)},260)},2800)}
+ var s=document.getElementById('scene'),t=document.getElementById('tilt');
+ if(s&&t&&!rm&&window.innerWidth>960){
+  s.addEventListener('mousemove',function(e){var r=s.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.setProperty('--ry',(x*14)+'deg');t.style.setProperty('--rx',(-y*10)+'deg')});
+  s.addEventListener('mouseleave',function(){t.style.setProperty('--ry','0deg');t.style.setProperty('--rx','0deg')});
+ }
+})();
+</script>
+</body>
+</html>

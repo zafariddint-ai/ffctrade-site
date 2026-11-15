@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zafariddin Toshmurodov · FFc Trade</title>
+<meta name="description" content="Zafariddin Toshmurodov: forex, kripto va aksiya bozorlarida 4 yillik tajriba. Ma’lumot va tanishuv sahifasi.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a1228;--ink:#eaf0ff;--mut:#a9b6d6;--acc:#4f78f0;--line:#233157}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+.wrap{max-width:1136px;margin:0 auto;padding:0 24px;position:relative}
+nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0;color:var(--mut)}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--ink)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#3fc878;margin-right:10px;animation:pulse 1.8s ease-out infinite}
+.hero{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:24px 0 48px}
+.four{display:flex;align-items:center;gap:22px;margin-bottom:14px}
+.four b{font-family:'Space Grotesk',sans-serif;font-size:116px;line-height:.9;color:#6f95ff;text-shadow:1px 1px 0 #1b3a8a,2px 2px 0 #1b3a8a,3px 3px 0 #1b3a8a,4px 4px 0 #1b3a8a,5px 5px 0 #1b3a8a,6px 6px 0 #1b3a8a,7px 7px 0 #1b3a8a,8px 8px 0 #1b3a8a,9px 9px 0 #1b3a8a,10px 10px 0 #1b3a8a;animation:bob 4s ease-in-out infinite}
+.four span{font-size:20px;line-height:1.35;color:var(--mut)}
+h1{margin:0 0 14px;font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,56px);line-height:1.04;letter-spacing:-.03em}
+.lead{margin:0 0 24px;font-size:19px;color:var(--mut);max-width:520px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:10px}
+.btn.ghost{background:transparent;border:1px solid #3a4c82}
+.btn:focus-visible{outline:3px solid #9fb6ff;outline-offset:3px}
+.scene{width:600px;height:380px;flex:none;perspective:1500px;perspective-origin:30% 40%}
+.stack{position:relative;width:100%;height:100%;transform-style:preserve-3d;animation:fl 6s ease-in-out infinite}
+.ph{position:absolute;left:0;top:6px;width:270px;height:350px;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#27489f,#12214d 60%,#0d1733);border:1px solid rgba(255,255,255,.25);box-shadow:0 40px 80px rgba(0,0,0,.55)}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
+.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,40,.92),rgba(10,18,40,0) 42%)}
+.ph div{position:absolute;left:18px;right:18px;bottom:16px;z-index:1}
+.ph strong{font-family:'Space Grotesk',sans-serif;font-size:19px;display:block}
+.ph small{font-size:14px;color:var(--mut)}
+.c{position:absolute;width:290px;height:124px;padding:20px 24px;border-radius:16px;background:rgba(14,24,52,.88);border:1px solid rgba(255,255,255,.2);box-shadow:0 30px 60px rgba(0,0,0,.5);transform:translateZ(60px)}
+.c h3{margin:0 0 6px;font-family:'Space Grotesk',sans-serif;font-size:26px}
+.c p{margin:0;font-size:15px;color:var(--mut)}
+.trust{display:flex;gap:12px 36px;flex-wrap:wrap;padding:16px 0;border-top:1px solid var(--line);font-size:15px;color:#c9d4ee}
+.trust span{display:flex;gap:8px;align-items:center}
+.tkw{border-top:1px solid var(--line);background:#0d1733;overflow:hidden;padding:9px 0;color:#7f8db0;font-size:14px;letter-spacing:.04em}
+.tk{display:flex;white-space:nowrap;width:max-content;animation:tick 30s linear infinite}
+.disc{padding:20px 0 36px;font-size:13px;color:#7f8db0}
+.up{animation:up .8s ease-out both}
+@keyframes fl{0%,100%{transform:rotateY(-20deg) rotateX(8deg) translateY(0)}50%{transform:rotateY(-20deg) rotateX(8deg) translateY(-14px)}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,200,120,.6)}100%{box-shadow:0 0 0 12px rgba(63,200,120,0)}}
+@keyframes tick{to{transform:translateX(-50%)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(max-width:960px){
+ .hero{flex-direction:column;align-items:flex-start}
+ .scene{width:100%;height:auto;perspective:none}
+ .stack{animation:none;transform:none!important;display:flex;flex-direction:column;gap:14px;align-items:center}
+ .ph,.c{position:relative;left:auto!important;top:auto!important;transform:none}
+ .c{width:100%;max-width:420px;height:auto}
+ .four b{font-size:88px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <nav><span class="logo">FFc Trade</span><span><i class="dot"></i>Forex · Kripto · Aksiyalar</span></nav>
+ <main class="hero">
+  <div>
+   <div class="four up"><b>4</b><span>yillik tajriba<br>bozorlarda</span></div>
+   <h1 class="up" style="animation-delay:.2s">Zafariddin Toshmurodov</h1>
+   <p class="lead up" style="animation-delay:.4s">Treyder. Bu sahifa tanishuv va ma’lumot uchun, savdo terminali emas.</p>
+   <div class="btns up" style="animation-delay:.6s">
+    <a class="btn" id="yt" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube kanali</a>
+    <a class="btn ghost" id="tg" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+   </div>
+  </div>
+  <div class="scene"><div class="stack">
+   <div class="ph"><img src="zafariddin.png" alt="Zafariddin Toshmurodov"><div><strong>Zafariddin Toshmurodov</strong><small>Treyder · 4 yil tajriba</small></div></div>
+   <div class="c" style="left:230px;top:0"><h3>Forex</h3><p>Valyuta juftliklari, tahlil va risk nazorati</p></div>
+   <div class="c" style="left:280px;top:128px"><h3>Kripto</h3><p>Bitcoin, altcoinlar va bozor tuzilishi</p></div>
+   <div class="c" style="left:320px;top:256px"><h3>Aksiyalar</h3><p>Kompaniyalar, fundamental va texnik yondashuv</p></div>
+  </div></div>
+ </main>
+ <div class="trust"><span>✓ 4 yillik tajriba</span><span>✓ 3 bozor: forex, kripto, aksiya</span><span>✓ Risk haqida ochiq ma’lumot</span></div>
+</div>
+<div class="tkw" aria-hidden="true"><div class="tk"><span>EUR/USD · GBP/USD · USD/JPY · XAU/USD · BTC · ETH · SOL · AAPL · TSLA · NVDA · MSFT · EUR/USD · GBP/USD · USD/JPY · XAU/USD · BTC · ETH · SOL · AAPL · TSLA · NVDA · MSFT · </span><span>EUR/USD · GBP/USD · USD/JPY · XAU/USD · BTC · ETH · SOL · AAPL · TSLA · NVDA · MSFT · EUR/USD · GBP/USD · USD/JPY · XAU/USD · BTC · ETH · SOL · AAPL · TSLA · NVDA · MSFT · </span></div></div>
+<div class="wrap"><p class="disc">Bu sahifadagi ma’lumotlar o‘quv va tanishuv maqsadida berilgan va moliyaviy maslahat emas. Savdo yo‘qotish xavfi bilan bog‘liq. © FFc Trade</p></div>
+</body>
+</html>

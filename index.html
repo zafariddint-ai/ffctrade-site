@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFC Trade — Zafariddin Toshmurodov | Professional Trading</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0b0e14;
+            --bg-secondary: #131722;
+            --bg-card: #181d2a;
+            --accent-green: #00d084;
+            --accent-blue: #2962ff;
+            --text-main: #f0f3fa;
+            --text-muted: #868993;
+            --border-color: #2a2e39;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 14, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 16px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Base64 orqali o'rnatilgan logotip */
+        .logo img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-green);
+        }
+
+        .logo span {
+            color: var(--accent-green);
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #1e53e5;
+            transform: translateY(-1px);
+        }
+
+        /* Ticker Tape */
+        .ticker-wrapper {
+            margin-top: 70px;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 70px 5% 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .profile-avatar-container {
+            margin-bottom: 20px;
+        }
+
+        .profile-avatar-container img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-green);
+            box-shadow: 0 0 25px rgba(0, 208, 132, 0.3);
+        }
+
+        .founder-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            color: var(--accent-green);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 208, 132, 0.12);
+            color: var(--accent-green);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 208, 132, 0.25);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #2962ff, #00d084);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 680px;
+            margin: 0 auto 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-main);
+            padding: 10px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+        }
+
+        /* Live Chart Section */
+        .chart-section {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .chart-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 500px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Features / Strategy */
+        .features {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(41, 98, 255, 0.15);
+            color: var(--accent-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Risk Calculator */
+        .calc-section {
+            padding: 60px 5%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calc-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 32px;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .input-group input {
+            width: 100%;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .calc-result {
+            margin-top: 24px;
+            padding: 16px;
+            background: rgba(0, 208, 132, 0.08);
+            border: 1px solid rgba(0, 208, 132, 0.25);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 5%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 16px auto 0;
+            font-size: 0.8rem;
+            color: #636773;
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .chart-container { height: 380px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <a href="#" class="logo">
+            <img src="data:image/jpeg;base64,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
